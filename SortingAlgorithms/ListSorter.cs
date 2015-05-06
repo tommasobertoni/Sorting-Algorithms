@@ -9,7 +9,8 @@ namespace SortingAlgorithms
     public class ListSorter
     {
         private ISorter _insertionSorter,
-                        _selectionSorter;
+                        _selectionSorter,
+                        _bubbleSorter;
 
         public void InsertionSort<T>(IList<T> list) where T : IComparable
         {
@@ -21,6 +22,12 @@ namespace SortingAlgorithms
         {
             if (_selectionSorter == null) _selectionSorter = new SelectionSort();
             _selectionSorter.Sort(list);
+        }
+
+        public void BubbleSort<T>(IList<T> list) where T : IComparable
+        {
+            if (_bubbleSorter == null) _bubbleSorter = new BubbleSort();
+            _bubbleSorter.Sort(list);
         }
     }
 }

@@ -19,9 +19,6 @@ namespace Client
             var list = GetNewStringsIList(20);
             List<IList> sortedLists = new List<IList>();
 
-            List<int> tempList = new List<int>(new[] { 3, 6, 9, 2, 5 });
-            lsort.SelectionSort(tempList);
-
             Console.WriteLine("-----Initial List-----\n");
             Console.WriteLine(ToLinearString(list));
 
@@ -36,6 +33,12 @@ namespace Client
             lsort.SelectionSort(selectionSorted);
             sortedLists.Add(selectionSorted);
             Console.WriteLine(ToLinearString(selectionSorted));
+
+            Console.WriteLine("\n\n-----Bubble Sort-----\n");
+            var bubbleSorted = list.Select(item => (string)item.Clone()).ToList();
+            lsort.BubbleSort(bubbleSorted);
+            sortedLists.Add(bubbleSorted);
+            Console.WriteLine(ToLinearString(bubbleSorted));
 
             if (sortedLists.Count > 1)
             {
