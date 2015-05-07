@@ -17,33 +17,6 @@ namespace Client
         private IList<string> _list;
         private List<IList> _sortedLists;
 
-        public static class ShellSorter
-        {
-            public static void Sort<T>(List<T> list) where T : IComparable
-            {
-                int n = list.Count;
-                int[] incs = { 1, 3, 7, 21, 48, 112, 336, 861, 1968, 4592, 13776, 33936, 86961, 198768, 463792, 1391376, 3402672, 8382192, 21479367, 49095696, 114556624, 343669872, 52913488, 2085837936 };
-                for (int l = incs.Length / incs[0]; l > 0; )
-                {
-                    int m = incs[--l];
-                    for (int i = m; i < n; ++i)
-                    {
-                        int j = i - m;
-                        if (list[i].CompareTo(list[j]) < 0)
-                        {
-                            T tempItem = list[i];
-                            do
-                            {
-                                list[j + m] = list[j];
-                                j -= m;
-                            } while ((j >= 0) && (tempItem.CompareTo(list[j]) < 0));
-                            list[j + m] = tempItem;
-                        }
-                    }
-                }
-            }
-        }
-
         static void Main(string[] args)
         {
             Program prog = new Program();
