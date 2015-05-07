@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SortingAlgorithms
+namespace SortingAlgorithms.algorithms
 {
     /// <summary>
     /// Algorithm description: http://www.sorting-algorithms.com/selection-sort

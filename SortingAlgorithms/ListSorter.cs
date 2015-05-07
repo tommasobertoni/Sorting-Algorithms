@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SortingAlgorithms.algorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace SortingAlgorithms
     {
         private ISorter _insertionSorter,
                         _selectionSorter,
-                        _bubbleSorter;
+                        _bubbleSorter,
+                        _shellSorter;
 
         public void InsertionSort<T>(IList<T> list) where T : IComparable
         {
@@ -28,6 +30,12 @@ namespace SortingAlgorithms
         {
             if (_bubbleSorter == null) _bubbleSorter = new BubbleSort();
             _bubbleSorter.Sort(list);
+        }
+
+        public void ShellSort<T>(IList<T> list) where T : IComparable
+        {
+            if (_shellSorter == null) _shellSorter = new ShellSort();
+            _shellSorter.Sort(list);
         }
     }
 }

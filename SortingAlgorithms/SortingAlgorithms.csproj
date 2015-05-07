@@ -39,12 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BubbleSort.cs" />
-    <Compile Include="InsertionSort.cs" />
-    <Compile Include="ISorter.cs" />
+    <Compile Include="algorithms\BubbleSort.cs" />
+    <Compile Include="algorithms\InsertionSort.cs" />
+    <Compile Include="algorithms\ISorter.cs" />
     <Compile Include="ListSorter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectionSort.cs" />
+    <Compile Include="algorithms\SelectionSort.cs" />
+    <Compile Include="algorithms\ShellSort.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
