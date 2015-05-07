@@ -89,19 +89,11 @@ namespace Client
             Console.WriteLine("-----" + keyname + " Sort-----\n");
             List<string> sorted = _list.Select(item => (string)item.Clone()).ToList();
 
-            if (keyname.Equals("Shell") && false)
-            {
-                ShellSorter.Sort(new List<int>(new int[] {3, 6, 9, 2, 5}));
-                ShellSorter.Sort(sorted);
-            }
-            else
-            {
-                MethodInfo sortMethod = typeof(ListSorter)
-                                   .GetMethod(keyname + "Sort")
-                                   .MakeGenericMethod(new[] { typeof(string) });
+            MethodInfo sortMethod = typeof(ListSorter)
+                                .GetMethod(keyname + "Sort")
+                                .MakeGenericMethod(new[] { typeof(string) });
 
-                sortMethod.Invoke(_lsort, new object[] { sorted });
-            }
+            sortMethod.Invoke(_lsort, new object[] { sorted });
 
             _sortedLists.Add(sorted);
             Console.WriteLine(ToLinearString(sorted));
