@@ -42,6 +42,8 @@
     <Compile Include="algorithms\BubbleSort.cs" />
     <Compile Include="algorithms\InsertionSort.cs" />
     <Compile Include="algorithms\ISorter.cs" />
+    <Compile Include="algorithms\MergeSortOld.cs" />
+    <Compile Include="algorithms\MergeSort.cs" />
     <Compile Include="ListSorter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="algorithms\SelectionSort.cs" />

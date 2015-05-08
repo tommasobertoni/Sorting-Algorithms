@@ -12,7 +12,8 @@ namespace SortingAlgorithms
         private ISorter _insertionSorter,
                         _selectionSorter,
                         _bubbleSorter,
-                        _shellSorter;
+                        _shellSorter,
+                        _mergeSorter;
 
         public void InsertionSort<T>(IList<T> list) where T : IComparable
         {
@@ -36,6 +37,12 @@ namespace SortingAlgorithms
         {
             if (_shellSorter == null) _shellSorter = new ShellSort();
             _shellSorter.Sort(list);
+        }
+
+        public void MergeSort<T>(IList<T> list) where T : IComparable
+        {
+            if (_mergeSorter == null) _mergeSorter = new MergeSort();
+            _mergeSorter.Sort(list);
         }
     }
 }

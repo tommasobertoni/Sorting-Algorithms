@@ -20,11 +20,12 @@ namespace Client
         static void Main(string[] args)
         {
             Program prog = new Program();
-            prog.init();
+            prog.init(19);
             Console.WriteLine("\n"); prog.SortUsing("Insertion");
             Console.WriteLine("\n"); prog.SortUsing("Selection");
             Console.WriteLine("\n"); prog.SortUsing("Bubble");
             Console.WriteLine("\n"); prog.SortUsing("Shell");
+            Console.WriteLine("\n"); prog.SortUsing("Merge");
             Console.WriteLine("\n"); prog.AssertEquals();
         }
 
@@ -34,9 +35,11 @@ namespace Client
             _sortedLists = new List<IList>();
         }
 
-        private void init()
+        private void init(int count = 0)
         {
-            _list = GetNewStringsIList(19);
+            if (count < 0) throw new ArgumentOutOfRangeException();
+            _sortedLists.Clear();
+            _list = GetNewStringsIList(count);
             Console.WriteLine("-----Initial List-----\n");
             Console.WriteLine(ToLinearString(_list));
         }
