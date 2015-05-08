@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SortingAlgorithms.algorithms
 {
+    /// <summary>
+    /// Algorithm description: http://www.sorting-algorithms.com/heap-sort
+    /// </summary>
     class HeapSort : ISorter
     {
         public override void Sort<T>(IList<T> list)
