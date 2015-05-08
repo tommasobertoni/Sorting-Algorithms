@@ -26,6 +26,7 @@ namespace Client
             Console.WriteLine("\n"); prog.SortUsing("Bubble");
             Console.WriteLine("\n"); prog.SortUsing("Shell");
             Console.WriteLine("\n"); prog.SortUsing("Merge");
+            Console.WriteLine("\n"); prog.SortUsing("Heap");
             Console.WriteLine("\n"); prog.AssertEquals();
         }
 
@@ -98,8 +99,19 @@ namespace Client
 
             sortMethod.Invoke(_lsort, new object[] { sorted });
 
+            CheckSort(sorted);
+
             _sortedLists.Add(sorted);
             Console.WriteLine(ToLinearString(sorted));
         }
+
+        private void CheckSort<T>(IList<T> sorted) where T : IComparable
+        {
+            for (int i = 0; i < sorted.Count - 1; i++)
+                if (sorted[i].CompareTo(sorted[i + 1]) > 0)
+                    throw new NotSortedException();
+        }
     }
+
+    class NotSortedException : Exception { }
 }
