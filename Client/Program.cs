@@ -27,7 +27,9 @@ namespace Client
             Console.WriteLine("\n"); prog.SortUsing("Shell");
             Console.WriteLine("\n"); prog.SortUsing("Merge");
             Console.WriteLine("\n"); prog.SortUsing("Heap");
+            Console.WriteLine("\n"); prog.SortUsing("Quick");
             Console.WriteLine("\n"); prog.AssertEquals();
+            Console.ReadLine();
         }
 
         public Program()
@@ -73,8 +75,6 @@ namespace Client
                 }
                 Console.WriteLine("\\Test succeded");
             }
-
-            Console.ReadLine();
         }
 
         private string ToLinearString<T>(IList<T> list)

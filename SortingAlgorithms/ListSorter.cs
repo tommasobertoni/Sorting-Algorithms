@@ -14,7 +14,8 @@ namespace SortingAlgorithms
                         _bubbleSorter,
                         _shellSorter,
                         _mergeSorter,
-                        _heapSorter;
+                        _heapSorter,
+                        _quickSorter;
 
         public void InsertionSort<T>(IList<T> list) where T : IComparable
         {
@@ -50,6 +51,12 @@ namespace SortingAlgorithms
         {
             if (_heapSorter == null) _heapSorter = new HeapSort();
             _heapSorter.Sort(list);
+        }
+
+        public void QuickSort<T>(IList<T> list) where T : IComparable
+        {
+            if (_quickSorter == null) _quickSorter = new QuickSort();
+            _quickSorter.Sort(list);
         }
     }
 }
